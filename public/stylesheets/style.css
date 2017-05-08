@@ -1,0 +1,128 @@
+body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, textarea, blockquote {
+  margin: 0; padding: 0; border: 0;
+}
+/*Mostly decided on blue and black because thats the theme of my youtube channel*/
+body {
+  font: 14px Helvetica, sans-serif; line-height: 24px; color: #a6a6a6;
+  background: #000;
+}
+#container {
+  width: 960px; margin: 0 auto 20px 415px; background: #000;
+  box-shadow: 0 5px 45px #343434;
+  -moz-box-shadow: 0 5px 45px #343434;
+  -webkit-box-shadow: 0 5px 45px #343434;
+}
+video{
+  padding-left: 200px;
+  padding-top: 30px;
+}
+.twitter-timeline{
+  margin-left: 290px;
+}
+a {
+  color: #abe2ff; text-decoration: none;
+}
+a:hover {
+  color: #5db5e3;
+}
+header h1 {
+  margin: 54px 0 0 21px; float: left;
+}
+header nav {
+  float: left;
+  margin: 79px 0 17px 0;
+}
+header nav ul li {
+  float: left; list-style: none; width: 58px; margin: 0 0 0 98px;
+}
+header nav ul li a {
+  text-transform: uppercase;
+}
+#feature {
+  clear: both; height: 431px; overflow: hidden; margin: 0 0 50px 0;
+  background: #000;
+  background: -moz-linear-gradient(top, #000 0%, #191919 5%, #000 5%, #000 94%, #191919 94%, #000 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0% #000), color-stop(5% #191919), color-stop(94%, #000), color-stop(94%, #191919), color-stop(100%, #000));
+  background: -webkit-linear-gradient(top, #000 0%, #191919 5%, #000 5%,#000 94%, #000 100%);
+}
+#feature h2 {
+  color: #5db5e3;
+  width: 216px; height: 30px; margin: 0 0 31px 0;
+}
+#feature img {
+  float: right; margin: 22px 0 0 0;
+}
+#feature-info {
+  float: left; width: 600px; margin-bottom: 200px; padding-left: 200px; padding-top: 50px; margin-left: 90px;
+}
+#feature-info p {
+  margin: 0 0 34px 0; font-size: 16px;
+}
+#feature-info p.btn a {
+  display: block;  width: 200px;  height: 35px;
+  background: #497389;
+  background: -moz-linear-gradient(top, #497389 0%, #151e36 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #497389), color-stop(100%, #151e36), color-stop(100%, #000));
+  background: -webkit-linear-gradient(top, #497389 0%, #151e36 100%);
+  border: 1px solid #313e52;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  text-transform: uppercase; text-align: center; padding: 7px 0 0 0;
+}
+#content {
+  overflow: hidden; clear: both; padding-left: 60px;
+}
+#content .bucket {
+  width: 300px; float: left; margin: 0 0 48px 100px; padding: 20px;
+  border: 1px solid #262626;
+  background: #000;
+  background: -moz-linear-gradient(top, #000 0%, #000 39%, #191919 39%, #000 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000), color-stop(39%, #000), color-stop(39%, #191919), color-stop(100%, #000));
+  background: -webkit-linear-gradient(top, #000 0%, #000 39%, #191919 39%, #000 100%);
+}
+#content .bucket:first-child {
+  margin: 0 0 0 22px;
+}
+#content #Flavoroftheweek, #content #Palatecleanser, #content #Reviews, #content #Specials {
+  display: block; width: 212px; height: 143px;
+  margin: 0 0 32px 0; text-indent: -9999px;
+}
+/*the pictures can and might have a background if the thumbnails are done, probably not.*/
+#content #Flavoroftheweek { background: url(); }
+#content #Palatecleanser { background: url(); }
+#content #Reviews { background: url(); }
+#content #Specials { background: url(); }
+
+#content #Flavoroftheweek:hover, #content #Palatecleanser:hover, #content #Reviews:hover, #content #Specials:hover {
+  background-position: 0 -143px;
+}
+
+#content .bucket p {
+  margin: 0 0 5px 0; padding: 0 13px 0 13px;
+}
+
+footer {
+  width: 960px; margin:0 auto; height: 80px;
+  font-size: 12px;
+}
+footer #copyright {
+  float: left; margin: 0 0 0 22px;
+}
+
+footer ul {
+  float: left; margin: 0 0 0 134px; list-style: none; overflow: hidden;
+}
+footer li {
+  float: left; margin: 0 10px 0 10px;
+  padding-left: 30px;
+}
+footer #back-top {
+  float: right; margin: 0 22px 0 0;
+}
+footer #back-top a {
+  background: url(https://i.ytimg.com/vi/kxfeTcty3Do/maxresdefault.jpg) ; padding: 5px 5px 5px 4px;
+}
+#tag{
+  color:#5db5e3;
+}
