@@ -26,7 +26,7 @@ app.use(passport.session());
 app.use(flash());
 
 var mongo_pw = process.env.MONGO_PW;
-var url = 'mongodb://@localhost:27017/';
+var url = process.env.Mongo_URL;
 MongoClient.connect(url,function(err, db){});
 
 // uncomment after placing your favicon in /public
