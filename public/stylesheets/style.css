@@ -12,12 +12,14 @@ body {
   -moz-box-shadow: 0 5px 45px #343434;
   -webkit-box-shadow: 0 5px 45px #343434;
 }
-video{
+iframe{
   padding-left: 200px;
   padding-top: 30px;
+  width: 560px;
+  height: 400px;
 }
 .twitter-timeline{
-  margin-left: 290px;
+  margin-left: 250px; max-height: 250px; max-width: 500px; white-space: nowrap;
 }
 a {
   color: #abe2ff; text-decoration: none;
@@ -39,7 +41,7 @@ header nav ul li a {
   text-transform: uppercase;
 }
 #feature {
-  clear: both; height: 431px; overflow: hidden; margin: 0 0 50px 0;
+  clear: both; height: 431px; overflow: hidden; margin: 0 0 50px 60px;
   background: #000;
   background: -moz-linear-gradient(top, #000 0%, #191919 5%, #000 5%, #000 94%, #191919 94%, #000 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0% #000), color-stop(5% #191919), color-stop(94%, #000), color-stop(94%, #191919), color-stop(100%, #000));
@@ -74,7 +76,7 @@ header nav ul li a {
   overflow: hidden; clear: both; padding-left: 60px;
 }
 #content .bucket {
-  width: 300px; float: left; margin: 0 0 48px 100px; padding: 20px;
+  width: 250px; float: left; margin: 0 0 48px 50px; padding: 20px;
   border: 1px solid #262626;
   background: #000;
   background: -moz-linear-gradient(top, #000 0%, #000 39%, #191919 39%, #000 100%);
@@ -82,7 +84,7 @@ header nav ul li a {
   background: -webkit-linear-gradient(top, #000 0%, #000 39%, #191919 39%, #000 100%);
 }
 #content .bucket:first-child {
-  margin: 0 0 0 22px;
+  margin: 0 0 0 200px;
 }
 #content #Flavoroftheweek, #content #Palatecleanser, #content #Reviews, #content #Specials {
   display: block; width: 212px; height: 143px;

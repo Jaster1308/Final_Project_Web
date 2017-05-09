@@ -1,0 +1,19 @@
+<h1>Wait a sec.......how'd you even find us?</h1>
+
+<h2>Well, now that you're here.......sign up anyway......BUT DON'T TELL ANYONE!!!</h2>
+
+<ul>
+    {{#each messages}}
+        <li>{{this}}</li>
+    {{/each}}
+</ul>
+
+<form action="/signup" method="POST">
+    Username: <input type="text" name="username" required>
+    <br>
+    Password: <input type="password" name ="password" required>
+    <br>
+    <input type="submit" name="signup" value="Sign up">
+</form>
+
+<p>Wait, you have an account already? @!$&%!@#(%!!!! Why didn't you tell us?! <a href="/login">Speak up next time...</a></p>

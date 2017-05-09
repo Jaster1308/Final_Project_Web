@@ -8,6 +8,8 @@ var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var flash = require('express-flash');
 var session = require('express-session');
+var passport = require('passport');
+var mongoose = require('mongoose');
 
 var index = require('./routes/index');
 // var users = require('./routes/users');
@@ -17,6 +19,11 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+require('./config/passport')(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 
 var mongo_pw = process.env.MONGO_PW;
 var url = 'mongodb://@localhost:27017/';
@@ -29,6 +36,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+    secret: 'replace me with long random string',
+    resave : true,
+    saveUninitialized: true
+}));
 
 app.use('/', index);
 // app.use('/users', users);

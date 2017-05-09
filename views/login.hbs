@@ -1,0 +1,19 @@
+<h1>Did anyone follow you?</h1>
+
+<h2>Hurry up and sign! There's some good stuff over here!</h2>
+
+<ul>
+    {{#each messages}}
+        <li>{{this}}</li>
+    {{/each}}
+</ul>
+
+<form action="/signup" method="POST">
+    Username: <input type="text" name="username" required>
+    <br>
+    Password: <input type="password" name ="password" required>
+    <br>
+    <input type="submit" name="login" value="Log im">
+</form>
+
+<p>Wait, you don't have an account already? @!$&%!@#(%!!!! Hoe'd you find us?! <a href="/signup">Speak up next time...</a></p>
