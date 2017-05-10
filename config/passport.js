@@ -49,11 +49,11 @@ module.exports = function(passport) {
                         return done(err)
                     }
                     if (!user) {
-                        return done(null, false, req.flash('loginMessage', 'User not found'))
+                        return done(null, false, req.flash('loginMsg', 'User not found'))
                     }
                     //This method is defined in our user.js model.
                     if (!user.validPassword(password)) {
-                        return done(null, false, req.flash('loginMessage', 'Wrong password'));
+                        return done(null, false, req.flash('loginMsg', 'Wrong password'));
                     }
 
                     return done(null, user);

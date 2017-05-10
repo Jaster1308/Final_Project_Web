@@ -29,6 +29,7 @@ app.use(flash());
 //still working on this......something is wrong with communicating
 var mongo_pw = process.env.MONGO_PW;
 var url = 'mongodb://admin:' + mongo_pw + '@localhost:27017/secret?authSource=admin';
+// mongoose.connect(url);
 var session_url = 'mongodb://admin:' + mongo_pw + '@localhost:27017/secret_sessions?authSource=admin';
 // var url = process.env.Mongo_URL;
 MongoClient.connect(url,function(err, db){});
