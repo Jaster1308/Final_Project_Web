@@ -10,6 +10,7 @@ var flash = require('express-flash');
 var session = require('express-session');
 var passport = require('passport');
 var mongoose = require('mongoose');
+var MongoDBStore = require('connect-mongodb-session')(session);
 
 var index = require('./routes/index');
 // var users = require('./routes/users');
@@ -26,7 +27,9 @@ app.use(passport.session());
 app.use(flash());
 
 var mongo_pw = process.env.MONGO_PW;
-var url = process.env.Mongo_URL;
+var url = 'mongodb://admin:' + mongo_pw + '@localhost:27017/secret?authSource=admin';
+var session_url = 'mongodb://admin:' + mongo_pw + '@localhost:27017/secret_sessions?authSource=admin';
+// var url = process.env.Mongo_URL;
 MongoClient.connect(url,function(err, db){});
 
 // uncomment after placing your favicon in /public
@@ -40,7 +43,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
     secret: 'replace me with long random string',
     resave : true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: new MongoDBStore( {url: session_url })
 }));
 
 app.use('/', index);
