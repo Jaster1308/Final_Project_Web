@@ -90,11 +90,11 @@ header nav ul li a {
   display: block; width: 212px; height: 143px;
   margin: 0 0 32px 0; text-indent: -9999px;
 }
-/*the pictures can and might have a background if the thumbnails are done, probably not.*/
-#content #Flavoroftheweek { background: url(); }
-#content #Palatecleanser { background: url(); }
-#content #Reviews { background: url(); }
-#content #Specials { background: url(); }
+/*!*the pictures can and might have a background if the thumbnails are done, probably not.*!*/
+/*#content #Flavoroftheweek { background: url(); }*/
+/*#content #Palatecleanser { background: url(); }*/
+/*#content #Reviews { background: url(); }*/
+/*#content #Specials { background: url(); }*/
 
 #content #Flavoroftheweek:hover, #content #Palatecleanser:hover, #content #Reviews:hover, #content #Specials:hover {
   background-position: 0 -143px;

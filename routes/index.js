@@ -17,6 +17,16 @@ router.post('/signup', passport.authenticate('local-signup', {
   failureFlash: true
 }));
 
+router.get('/login', function(req, res, next){
+  res.render('login');
+});
+
+router.post('/login', passport.authenticate('local-login', {
+  successRedirect: '/',
+  failureRedirect:'/login',
+  failureFlash: true
+}));
+
 router.get('/', isLoggedIn, function(req, res, next){
   res.render('/', {username: req.user.local.username});
 });
