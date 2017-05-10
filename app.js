@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
-var flash = require('express-flash');
+var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
 var mongoose = require('mongoose');
@@ -21,6 +21,14 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+app.use(session({
+    secret: 'replace me with long random string',
+    resave : true,
+    saveUninitialized: true,
+    store: new MongoDBStore( {url: session_url })
+}));
+
+
 require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
@@ -28,10 +36,10 @@ app.use(flash());
 
 //still working on this......something is wrong with communicating
 var mongo_pw = process.env.MONGO_PW;
-var url = 'mongodb://admin:' + mongo_pw + '@localhost:27017/secret?authSource=admin';
+// var url = 'mongodb://localhost:27017/index';
 // mongoose.connect(url);
-var session_url = 'mongodb://admin:' + mongo_pw + '@localhost:27017/secret_sessions?authSource=admin';
-// var url = process.env.Mongo_URL;
+var session_url = 'mongodb://admin:' + mongo_pw + '@localhost:27017/';
+var url = process.env.Mongo_URL;
 MongoClient.connect(url,function(err, db){});
 
 // uncomment after placing your favicon in /public
@@ -42,12 +50,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({
-    secret: 'replace me with long random string',
-    resave : true,
-    saveUninitialized: true,
-    store: new MongoDBStore( {url: session_url })
-}));
 
 app.use('/', index);
 // app.use('/users', users);
