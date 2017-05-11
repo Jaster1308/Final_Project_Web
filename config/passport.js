@@ -1,3 +1,4 @@
+//Login for the website verification, support from the week 13 lab
 var LocalStrategy = require('passport-local');
 var User = require('../models/user');
 
