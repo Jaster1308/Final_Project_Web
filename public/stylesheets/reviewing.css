@@ -1,0 +1,62 @@
+body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, textarea, blockquote {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    font: 14px Helvetica, sans-serif; line-height: 24px; color: #a6a6a6;
+    background: #000;
+}
+#container {
+    width: 960px; margin: 0 auto 20px 470px; background: #000;
+    box-shadow: 0 5px 45px #343434;
+    -moz-box-shadow: 0 5px 45px #343434;
+    -webkit-box-shadow: 0 5px 45px #343434;
+}
+#comment {
+    padding-top: 150px;
+}
+a {
+    color: #abe2ff; text-decoration: none;
+}
+a:hover {
+    color: #5db5e3;
+}
+header h1 {
+    margin: 54px 0 0 21px; float: left;
+}
+header nav {
+    float: left;
+    margin: 79px 0 17px 0;
+}
+header nav ul li {
+    float: left; list-style: none; width: 58px; margin: 0 0 0 98px;
+}
+header nav ul li a {
+    text-transform: uppercase;
+}
+footer {
+    width: 960px; margin:0 auto; height: 80px;
+    font-size: 12px;
+    padding-top: 25px;
+}
+footer #copyright {
+    float: left; margin: 0 0 0 22px;
+}
+
+footer ul {
+    float: left; margin: 0 0 0 134px; list-style: none; overflow: hidden;
+}
+footer li {
+    float: left; margin: 0 10px 0 10px;
+    padding-left: 30px;
+}
+footer #back-top {
+    float: right; margin: 0 22px 0 0;
+}
+footer #back-top a {
+    background: url(https://i.ytimg.com/vi/kxfeTcty3Do/maxresdefault.jpg) ; padding: 5px 5px 5px 4px;
+}
+#tag{
+    color:#5db5e3;
+}

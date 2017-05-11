@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Flavor</title>
+    <!--Css and javascript style sheets, might not need java-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <!--<link href="reviewing.css" rel="stylesheet" />-->
+    <!--<link href="GF.js" rel="script"/>-->
+</head>
+<body>
+<div id="container">
+    <header>
+        <h1><a href="/"><img src="https://yt3.ggpht.com/-KEn56IyRxZU/AAAAAAAAAAI/AAAAAAAAAAA/t3j6lM5Y0Qc/s100-c-k-no/photo.jpg" alt="Return to the homepage" /></a></h1>
+        <nav>
+            <ul>
+                <li><a href="/flavors">Flavors of the Week</a></li>
+                <li><a href="#" onclick="nothing()">Palate Cleansers</a></li>
+                <li><a href="/reviews">Reviews</a></li>
+                <li><a href="#" onclick="nothing()">Specials</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+<br><br><br><br>
+<center><div id="comment">
+    <form action="mongodb://testing:testing@ds047865.mlab.com:47865/flower">
+        <h2>Tell us what you're thinking!</h2>
+        <br>
+        <textarea id='text' name="comments" placeholder="Give us your worst....be gentle...." cols="150" rows="8"></textarea>
+        <br>
+        <button id='postbtn' type="submit">Post</button>
+    </form>
+
+    <p id="postingTable"></p>
+</div></center>
+
+<footer>
+    <p id="copyright">&copy; Copyright GF 2016</p>
+    <ul>
+        <li><a href="#" onclick="nothing()">About us</a></li>
+        <li><a href="#" onclick="nothing()">Merchandise</a></li>
+        <li><a href="#" onclick="nothing()">News</a></li>
+        <li><a href="#" onclick="nothing()">Contact</a></li>
+    </ul>
+
+    <p id="back-top"><a href="/logout">Log out</a></p>
+</footer>
+
+<script>
+    document.getElementById('postbtn').addEventListener('click', addToList);
+    var newPost = 1;
+    function addToList() {
+        var texting = document.getElementById('text');
+        var elements = document.getElementById('postingTable');
+        var items = document.createElement('p');
+        items.innerHTML = newPost + '         ' + texting.value;
+        newPost++;
+        elements.appendChild(items)
+    }
+    function nothing() {
+        alert('Uhhhhhh there is no content in here yet so stop clicking this tab!');
+    }
+</script>
+</body>
+</html>

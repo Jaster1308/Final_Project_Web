@@ -31,6 +31,29 @@ router.get('/', isLoggedIn, function(req, res, next){
   res.render('/', {username: req.user.local.username});
 });
 
+router.get('/reviews', isLoggedIn, function(req, res, next) {
+  res.render('reviews');
+});
+
+router.get('/flavors', isLoggedIn, function(req, res, next){
+  res.render('flavors')
+});
+
+router.get('mongodb://testing:testing@ds047865.mlab.com:47865/flower', isLoggedIn, function(req, res) {
+  res.render('/reviews')
+});
+
+router.post('mongodb://testing:testing@ds047865.mlab.com:47865/flower', isLoggedIn, function(req, res){
+  res.render('/reviews')
+});
+
+// Log out
+
+router.get('/logout', function(req, res, next) {
+  req.logout();
+  res.redirect('/');
+});
+
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
