@@ -24,6 +24,9 @@ app.set('view engine', 'hbs');
 var session_url = process.env.SESSION_URL;
 var url = process.env.MONGO_URL;
 
+console.log(session_url);
+console.log(url);
+
 app.use(session({
     secret: 'replace me with long random string',
     resave : true,

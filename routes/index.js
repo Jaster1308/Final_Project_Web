@@ -43,14 +43,14 @@ router.get('mongodb://testing:testing@ds047865.mlab.com:47865/flower', isLoggedI
   res.render('/reviews')
 });
 
-router.post('/posts', isLoggedIn, function(req, res, next){
-  req.db.collection('allposts').insertOne(req.body, function(err) {
-    if (err) {
-      return next(err);
-    }
-    return res.redirect('/reviews')
-  })
-});
+// router.post('/posts', isLoggedIn, function(req, res, next){
+//   req.db.collection('allposts').insertOne(req.body, function(err) {
+//     if (err) {
+//       return next(err);
+//     }
+//     return res.redirect('/reviews')
+//   })
+// });
 
 // Log out
 
