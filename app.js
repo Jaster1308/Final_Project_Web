@@ -33,7 +33,7 @@ app.use(session({
     resave : true,
     saveUninitialized: true,
     store: new MongoDBStore( {uri: session_url,
-    collection: 'flower'})
+    collection: 'flower' })
 }));
 
 
