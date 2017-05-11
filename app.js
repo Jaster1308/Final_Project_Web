@@ -32,7 +32,8 @@ app.use(session({
     secret: 'replace me with long random string',
     resave : true,
     saveUninitialized: true,
-    // store: new MongoDBStore( {url: session_url })
+    store: new MongoDBStore( {uri: session_url,
+    collection: 'flower'})
 }));
 
 
