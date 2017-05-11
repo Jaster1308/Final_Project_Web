@@ -22,7 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 var session_url = 'mongodb://localhost:27017/sessiondb';
-var url = 'mongodb://JuJu:game@ds133961.mlab.com:33961/gamingkids';
+var url = process.env.MONGO_URL;
 
 app.use(session({
     secret: 'replace me with long random string',
