@@ -7,15 +7,15 @@ module.exports = function(passport) {
     });
 
     passport.deserializeUser(function(id, done){
-        User.fillById(id, function(err, user){
+        User.findById(id, function(err, user){
             done(err,user);
         })
     });
 
     passport.use('local-signup', new LocalStrategy({
-        usernamefield: 'username',
-        passwordfield: 'password',
-        passRegToCallback: true
+        usernameField: 'username',
+        passwordField: 'password',
+        passReqToCallback: true
     }, function(req, username, password, done){
         process.nextTick(function(){
           User.findOne({ 'local.username' : username }, function(err, user){
