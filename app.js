@@ -21,7 +21,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-var session_url = 'mongodb://localhost:27017/sessiondb';
+var session_url = process.env.SESSION_URL;
 var url = process.env.MONGO_URL;
 
 app.use(session({
