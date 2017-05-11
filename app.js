@@ -21,6 +21,9 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+var session_url = 'mongodb://localhost:27017/sessiondb';
+var url = 'mongodb://JuJu:game@ds133961.mlab.com:33961/gamingkids';
+
 app.use(session({
     secret: 'replace me with long random string',
     resave : true,
@@ -29,18 +32,20 @@ app.use(session({
 }));
 
 
+
 require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-//still working on this......something is wrong with communicating
-var mongo_pw = process.env.MONGO_PW;
-// var url = 'mongodb://localhost:27017/index';
-// mongoose.connect(url);
-var session_url = 'mongodb://admin:' + mongo_pw + '@localhost:27017/';
-var url = process.env.Mongo_URL;
-MongoClient.connect(url,function(err, db){});
+// //still working on this......something is wrong with communicating
+// var mongo_pw = process.env.MONGO_PW;
+// // var url = 'mongodb://localhost:27017/index';
+// // mongoose.connect(url);
+// var session_url = 'mongodb://admin:' + mongo_pw + '@localhost:27017/';
+// var url = process.env.Mongo_URL;
+// MongoClient.connect(url,function(err, db){});
+mongoose.connect(url);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
